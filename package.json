@@ -1,0 +1,22 @@
+{
+  "name": "form_elements_bare",
+  "version": "1.0.0",
+  "description": "Test form elements and notifications",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/knotthere/form_elements_bare.git"
+  },
+  "author": "Larry Knott",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/knotthere/form_elements_bare/issues"
+  },
+  "homepage": "https://github.com/knotthere/form_elements_bare#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
