@@ -7,39 +7,38 @@
 
     <title>The HTML5 Herald</title>
     <meta name="description" content="The HTML5 Herald">
-    <meta name="author" content="SitePoint">
+    <meta name="author" content="Larry Knott">
 
     <link rel="stylesheet" href="css/styles.css?v=1.0">
+    <script src="js/scripts.js"></script>
+    <script>
 
+    </script>
 </head>
 
 <body>
-    <script src="js/scripts.js"></script>
-    <p>
-        My P
-    </p>
-    Hello! XXX
 
-    <form action="/my-handling-form-page" method="post">
+    <form id="my_form" action="/my-handling-form-page" method="post" target="my_iframe">
         <ul>
             <li>
                 <label for="name">Name:</label>
-                <input type="text" id="name" name="user_name">
+                <input type="text" id="name" name="user_name" value="Larry Knott">
             </li>
             <li>
                 <label for="mail">E-mail:</label>
-                <input type="email" id="mail" name="user_mail">
+                <input type="email" id="mail" name="user_mail" value = "a@b.com">
             </li>
             <li>
                 <label for="msg">Message:</label>
-                <textarea id="msg" name="user_message"></textarea>
+                <textarea id="msg" name="user_message">Text Area Stuff ...</textarea>
             </li>
             <li class="button">
-                <button type="submit">Send your message</button>
+                <button id="my_button" type="submit">Send your message</button>
             </li>
         </ul>
     </form>
 
-</body>
+    <iframe id="my_iframe"></iframe>
 
+</body>
 </html>
