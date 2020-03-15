@@ -17,8 +17,24 @@
 </head>
 
 <body>
+    <script>
+        // $("#uploadDialog").dialog({
+        //     autoOpen: false, modal: true, closeOnEscape: false,
+        //     open: function (event, ui) { jQuery('.ui-dialog-titlebar-close').hide(); }
+        // });
 
-    <form id="my_form" action="/my-handling-form-page" method="post" target="my_iframe">
+        function startUpload() {
+            // $("#uploadDialog").dialog("open");
+            console.log('startUpload')
+        }
+
+        function stopUpload() {
+            // $("#uploadDialog").dialog("close");
+            console.log('stopUpload')
+        }
+    </script>
+
+    <form id="my_form" action="/my-handling-form-page" method="post" target="my_iframe" onsubmit="startUpload()">
         <ul>
             <li>
                 <label for="name">Name:</label>
@@ -26,7 +42,7 @@
             </li>
             <li>
                 <label for="mail">E-mail:</label>
-                <input type="email" id="mail" name="user_mail" value = "a@b.com">
+                <input type="email" id="mail" name="user_mail" value="a@b.com">
             </li>
             <li>
                 <label for="msg">Message:</label>
@@ -38,7 +54,9 @@
         </ul>
     </form>
 
-    <iframe id="my_iframe"></iframe>
+    <iframe id="my_iframe" name="my_iframe" style="width:0;height:0;border:0px solid #fff;" src="#"
+        onload="stopUpload()"></iframe>
 
 </body>
+
 </html>
