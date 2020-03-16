@@ -11,7 +11,9 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => res.send('Hello World!'))
-app.get('/favicon.ico', (req, res) => {} )
+app.get('/favicon.ico', (req, res) => {
+    res.sendFile('images/favicon.ico')
+} )
 
 // my-form-handler
 app.post('/my-handling-form-page', (req, res, next) => {

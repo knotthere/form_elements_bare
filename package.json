@@ -4,6 +4,7 @@
   "description": "Test form elements and notifications",
   "main": "index.js",
   "scripts": {
+    "debug": "node --nolazy --inspect-brk=9229 index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

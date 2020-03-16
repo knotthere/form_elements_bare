@@ -2,20 +2,27 @@ function load() {
     console.log("load event detected!");
     console.log('scripts.js loaded!')
 
-    // Create a map of event loggers
-    function asgn_fcn(target, event) {
-        target[event] = (event) => {
-            console.log(`Target Id: ${event.target.id}, Event Type: ${event.type}` )
-        }
-    }
-
     var ignoreMe = ['mouse', 'pointer', 'focus', 'device', 'blur', 'click', 'resize']
     function asgn_all(target) {
         for (var fcn in target) {
             if (fcn.substr(0, 2) == 'on' && target.hasOwnProperty(fcn) && target[fcn] == null) {
                 target[fcn] = (event) => {
-                    if (!ignoreMe.some(type => event.type.includes(type))) {
-                        console.log(`Target Id: ${event.target.id}, Event Type: ${event.type}`)
+                    // Special targets: window, html, document
+                    let target;
+                    if (event.target === window) {
+                        target = 'window'
+                    } else if (event.target === document) {
+                        target = 'document'
+                    } else {
+                        target = `localName: ${event.target.localName}, id: ${event.target.id}`
+                    }
+                    if (ignoreMe.some(type => event.type.includes(type))) {
+                        // console.log(`Skipping: ${event.type}`)
+                    } else {
+                        console.log(`Target: ${target}, Event Type: ${event.type}`)
+                        if (event.type == 'beforeunload') {
+                            // debugger
+                        }
                     }
                 }
             }
@@ -37,6 +44,18 @@ function load() {
 
     // Window.document
     asgn_all(window.document)
+
+    // https://developer.mozilla.org/en-US/docs/Web/API/Window/DOMContentLoaded_event
+    // A different event, load, should be used only to detect a fully-loaded page.
+    // It is a common mistake to use load where DOMContentLoaded would be more appropriate.
+    window.addEventListener('DOMContentLoaded', (event) => {
+        console.log('window: DOM fully loaded and parsed');
+    });
+
+    document.addEventListener('DOMContentLoaded', (event) => {
+        console.log('document: DOM fully loaded and parsed');
+    });
+
 }
 
 window.onload = load;

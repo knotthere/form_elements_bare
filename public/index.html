@@ -23,18 +23,19 @@
         //     open: function (event, ui) { jQuery('.ui-dialog-titlebar-close').hide(); }
         // });
 
-        function startUpload() {
-            // $("#uploadDialog").dialog("open");
-            console.log('startUpload')
-        }
+        // function startUpload() {
+        //     // $("#uploadDialog").dialog("open");
+        //     console.log('startUpload')
+        // }
 
-        function stopUpload() {
-            // $("#uploadDialog").dialog("close");
-            console.log('stopUpload')
-        }
+        // function stopUpload() {
+        //     // $("#uploadDialog").dialog("close");
+        //     console.log('stopUpload')
+        // }
     </script>
 
-    <form id="my_form" action="/my-handling-form-page" method="post" target="my_iframe" onsubmit="startUpload()">
+    <!-- <form id="my_form" action="/my-handling-form-page" method="post" target="my_iframe" onsubmit="startUpload()"> -->
+    <form id="my_form" action="/my-handling-form-page" method="post" target="my_iframe">
         <ul>
             <li>
                 <label for="name">Name:</label>
@@ -54,8 +55,8 @@
         </ul>
     </form>
 
-    <iframe id="my_iframe" name="my_iframe" style="width:0;height:0;border:0px solid #fff;" src="#"
-        onload="stopUpload()"></iframe>
+    <!-- <iframe id="my_iframe" name="my_iframe" style="width:0;height:0;border:0px solid #fff;" src="#" onload="stopUpload()"></iframe> -->
+    <iframe id="my_iframe" name="my_iframe" style="width:0;height:0;border:0px solid #fff;" src="#"></iframe>
 
 </body>
 
